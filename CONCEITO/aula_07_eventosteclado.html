@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript</title>
+
+    <script type="text/javascript">
+    //onkeydown
+    function msgBemVindo(){
+        alert('Bem-vindo!');
+    }
+
+    //onkeypress
+    function msgTchau(){
+        alert('Tchau!');
+    }
+
+    //onkeyup 
+    function msgSeDecida(){
+        alert('Bem-vindo, tchau!');
+    }   
+    </script>
+</head>
+<body>
+    <input type="text" onkeydown="msgBemVindo()">
+    <input type="text" onkeypress="msgTchau()">
+    <input type="text" onkeyup="msgSeDecida()" maxlength="1">  
+    
+</body>
+</html>
