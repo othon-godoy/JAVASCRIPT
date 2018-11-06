@@ -4,15 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JavaScript</title>
-
-    <script type="text/JavaScript">
-        alert('JavaScript Interno');    
-    </script>
-
-    <script lang="javascript" src="aula_00_introducao.js"></script>
+    <title>Introdução JavaScript</title>
 </head>
 <body>
+    <h1>O JavaScript pode alterar o conteúdo HTML</h1>    
+
+    <p id="exemplo">Exemplo</p>
+
+    <button type="button" onclick="document.getElementById('exemplo').innerHTML = 'Hello JavaScript!'">Click Me</button>
+
+    <h1>O JavaScript pode alterar valores de um atributo HTML</h1>    
+
+    <button onclick="document.getElementById('myImage').src='img/pic_bulbon.gif'">Ligue a lampada</button>
+
+    <img id="myImage" src="img/pic_bulboff.gif" alt="lampada" style="width: 100px;">
+
+    <button onclick="document.getElementById('myImage').src='img/pic_bulboff.gif'">Desligue a lampada</button>
+
+    <h1>O JavaScript pode alterar estilos CSS</h1> 
+
+    <p id="exemplo1">Alterando estilos CSS</p>
+
+    <button onclick="document.getElementById('exemplo1').style.fontSize = '40px';">Click Me</button>
+
+    <h1>O JavaScript pode ocultar elementos HTML</h1>
+
+    <p id="exemplo2">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit vitae incidunt ipsam quasi, animi nihil nisi voluptatum totam quod accusamus amet iusto excepturi nobis ratione dolorem aliquam dolor. Aut, a.
+    </p>
+
+    <button onclick="document.getElementById('exemplo2').style.display = 'none';">Click Me</button>
+
+    <h1>O JavaScript pode mostrar elementos HTML</h1>
+
+    <button onclick="document.getElementById('exemplo2').style.display = 'block';">Click Me</button>   
     
 </body>
 </html>

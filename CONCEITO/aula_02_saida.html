@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Saida</title>
+</head>
+<body>
+    <h1>O JavaScript pode exibir dados com o innerHTML</h1>
+    <p id="exemplo"></p>
+
+    <button onclick="document.getElementById('exemplo').innerHTML = 5 + 6;">Click Me</button>
+
+    <h1>O JavaScript pode exibir dados com o document.write()</h1>
+
+    <script>
+        document.write(5 + 6);
+    </script>
+
+    <h1>O document.write() pode ser usado diretamento no evento onClick de um objeto HTML</h1>
+
+    <p id="exemplo1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae minus culpa voluptatibus repellat quibusdam delectus ex ipsum sed molestias quam omnis consequuntur vitae necessitatibus tenetur sit, non cupiditate? Perspiciatis, aspernatur?</p>    
+
+    <p style="color: red;">O document.write deve ser usado apenas para testes, pois ele apaga todo o conteúdo da tela</p>
+
+    <button onclick="document.write(5+6);">Click Me</button>
+
+    <h1>O JavaScript pode exibir dados com o widow.alert()</h1>
+
+    <script>
+        function alertFunction(){
+            window.alert('Exibindo dados com o Alert!');
+        }
+    </script>
+
+    <button onclick="alertFunction()">Click Me</button>
+
+    <h1>O JavaScript pode exibir dados com console.log()</h1>
+
+    <p>O console.log() deverá ser usado para fins de depuração. Use o inspecionar elemento para verificar as respostas</p>
+
+    <script>
+        console.log('teste de impressão com o console.log');
+    </script>
+    
+</body>
+</html>
