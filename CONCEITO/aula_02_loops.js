@@ -1,4 +1,3 @@
-//Utilizando Estruturas de Repetição em JavaScript
 /*
 "Fizzbuzz" é uma famosa pergunta de entrevista utilizada em entrevistas de programação. Funciona mais ou menos assim:
 
@@ -20,6 +19,7 @@ Se o número for divisível por 5, exiba "James"
 Se o número for divisível por 3 e 5, exiba "JuliaJames"
 Se o número não for divisível por 3 nem 5, exiba o número
 */
+
 var x = 1;
 
 while (x <= 20) {
@@ -37,6 +37,7 @@ while (x <= 20) {
 }
 
 /*
+Direções:
 Escreva um loop que exiba a canção a seguir. Começando em 99 e terminando em 1 garrafa (bottle).
 
 99 bottles of juice on the wall! 99 bottles of juice! Take one down, pass it around... 98 bottles of juice on the wall!
@@ -49,6 +50,7 @@ Alguns detalhes:
 Observe a pluralização da palavra "bottle" quando você passa de 2 bottles para 1 bottle.
 Seu editor de texto provavelmente tentará corrigir suas reticências ... para o caractere …. Não utilize o caractere de reticências neste quiz.
 */
+
 var num = 99;
 
 while (num > 0) {
@@ -95,6 +97,7 @@ T-2 seconds
 T-1 seconds
 Solid rocket booster ignition and liftoff!
 */
+
 var t = 60;
 
 while(t >= 0){
@@ -118,6 +121,7 @@ while(t >= 0){
 }
 
 /*
+Instruções:
 Reescreva o loop while a seguir como um loop for:
 
 var x = 9;
@@ -126,33 +130,39 @@ while (x >= 1) {
   x = x - 1;
 }
 */
+
 for(var x = 9; x >= 1; x--){
     console.log("hello " + x);
 }
 
 /*
+Instruções:
 Aqui está um loop for que, em teoria, deve exibir os números 5 a 9. Conserte o erro!
 
 for (x < 10; x++) {
   console.log(x);
 }
 */
+
 for (var x = 5; x < 10; x++) {
     console.log(x);
 }
 
 /*
+Instruções:
 O loop for abaixo tem um erro. Conserte-o!
 
 for (var k = 0 k < 200 k++) {
   console.log(k);
 }
 */
+
 for (var k = 0; k < 200; k++) {
     console.log(k);
 }
 
 /*
+Direções:
 Escreva um loop for que exiba como saída o fatorial do número 12:
 
 Um fatorial é calculado multiplicando um número por todos os números abaixo dele. Por exemplo, 3! ou "3 fatorial" é 3 * 2 * 1 = 6
@@ -163,6 +173,7 @@ Um fatorial é calculado multiplicando um número por todos os números abaixo d
 
 Salve sua resposta final em uma variável chamada solution e exiba seu valor no console.
 */
+
 var solution = 1;
 
 for(var x = 4; x > 1; x--){
@@ -170,6 +181,10 @@ for(var x = 4; x > 1; x--){
 }
 
 /*
+Instruções:
+
+Creative Commons - Jeffrey Smith - "State Theater"
+
 Os assentos em um teatro geralmente são compostos pelo número da fileira e do assento em si, para ajudar seus frequentadores a acharem seus lugares. Se existem 26 fileiras (0 a 25) e 100 assentos (0 a 99) em cada fileira, escreva um loop for aninhado para exibir todas as diferentes combinações de assentos no teatro.
 
 Exemplo de saída para a informação de fileira/assento: exiba cada número de filera e assento em uma linha separada
@@ -182,6 +197,8 @@ Exemplo de saída para a informação de fileira/assento: exiba cada número de 
 25-98
 25-99
 */
+
+// Write your code here
 for(f = 0; f < 26; f++){
     for(a = 0; a < 100; a++){
         console.log(f + "-" + a);

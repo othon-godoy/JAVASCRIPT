@@ -1,17 +1,23 @@
-//Utilizando Estruturas de Decisão em JavaScript
-
 /*
-Operador ternário
-*/
-var isGoing = true;
-var color = isGoing ? "green" : "red";
-console.log(color);
-
-/*
+Instruções:
 Escreva uma declaração if...else que:
 
 imprima "even" se o número for par
 imprima "odd" se o número for ímpar
+Dica: use o operador % (modulo) para determinar se um número é ímpar ou par. O operador módulo recebe dois números e retorna o resto quando o primeiro é dividido pelo segundo:
+
+console.log(12 % 3);
+console.log(10 % 4);
+Resultado: 
+0 
+2
+
+A resposta para 12 % 3 é 0, porque 12 dividido por 3 não resulta em resto. 10 % 4 é 2, porque 10 dividido por 4 possui gera um resto de dois.
+
+Certifique-se de testar seu código com diferentes valores. Por exemplo:
+
+Se número é igual a 1, então odd deve ser impresso no console.
+Se número é igual a 12, então even deve ser impresso no console.
 */
 
 var number = 2;
@@ -36,9 +42,17 @@ imprima "duet" se o número de músicos for igual a 2
 imprima "trio" se o número de músicos for igual a 3
 imprima "quartet" se o número de músicos for igual a 4
 imprima "this is a large group" se o número de músicos for maior do que 4
+DICA: certifique-se de testar seu código com diferentes valores. Por exemplo:
+
+Se musicians for igual a 3, então trio deve ser impresso no console.
+Se musicians for igual a 20, então this is a large group deve ser impresso no console.
+Se musicians for igual a -1, então not a group deve ser impresso no console.
 */
+
+// change the value of `musicians` to test your conditional statements
 var musicians = 1;
 
+// your code goes here
 if(musicians <= 0) {
     console.log("not a group");
 } else if(musicians === 1) {
@@ -54,6 +68,7 @@ if(musicians <= 0) {
 }
 
 /*
+Instruções:
 Neste quiz, você vai ajudar a resolver um mistério e assassinato fictício que aconteceu aqui na Udacity! Um mistério e assassinato é um jogo tipicamente visto em festas onde uma das pessoas da festa, de forma secreta e sem saber, está se fazendo de assassino, e as outras pessoas da festa devem determinar qual delas é o criminoso. É um clássico caso de história de detetive.
 
 Como esta pode ser a primeira vez que você está jogando mistério e assassinato, nós simplificamos as coisas para ficar um pouco mais fácil. Aqui está o que sabemos! Neste mistério e assassinato, há:
@@ -83,7 +98,12 @@ __________ did it in the __________ with the __________!
 Preenche os espaços em branco com o nome do suspeito, o cômodo e a arma. Por exemplo,
 
 Mr. Parkes did it in the dining room with the knife!
+DICA: certifique-se de testar seu código com diferentes valores e componha as frases em inglês. Por exemplo:
+
+Se room é igual a gallery e suspect igual a Ms. Van Cleve, então Ms. Van Cleve did it in the gallery with the trophy! deve ser impresso no console.
 */
+
+// change the value of `room` and `suspect` to test your code
 var room = "dining room";
 var suspect = "Mr. Parkes";
 var weapon = ""; 
@@ -113,6 +133,7 @@ if (solved) {
 }
 
 /*
+Instruções:
 Usando o fluxograma abaixo, escreva o código para representar a verificação de seu saldo em um caixa eletrônico. Os diamantes amarelos representam declarações condicionais, e os retângulos azuis com cantos arredondados representam o que deve ser impresso no console.
 
 
@@ -123,11 +144,29 @@ Use as seguintes variáveis em sua solução:
 balance - o saldo da conta
 isActive - se a conta está ativa
 checkBalance - se você quer verificar o saldo
+Dica: A variável saldo pode ser um valor menor que, maior que, ou igual a 0. As variáveis isActive e checkBalance são booleanos que pode ser definidos como verdadeiro ou falso.
+
+DICA: Para imprimir o saldo da conta com pontos decimais (i.e. 325.00), use o método .toFixed() e passe o número de pontos decimais que você quer usar. Por exemplo, balance.toFixed(2) retorna 325.00.
+
+DICA: Certifique-se de testar seu código com diferentes valores. Por exemplo,
+
+Se checkBalance é igual a true e isActive é igual a false, então Your account is no longer active. deve ser impresso no console.
+
+DICA: Copie e cole os seguintes textos para evitar que ocorra erro de digitação:
+
+Thank you. Have a nice day!
+Your balance is $ .
+Your account is no longer active.
+Your account is empty.
+Your balance is negative. Please contact bank.
 */
+
+// change the values of `balance`, `checkBalance`, and `isActive` to test your code
 var balance = -500;
 var checkBalance = true;
 var isActive = true;
 
+// your code goes here
 if(!checkBalance){
     console.log("Thank you. Have a nice day!");
 }else{
@@ -147,6 +186,7 @@ if(!checkBalance){
 }
 
 /*
+Instruções:
 O sorvete é uma sobremesas das mais versáteis no planeta, porque ele pode ser feito das mais diferentes maneiras. Usando operadores lógicos, escreva um série de expressões lógicas complexas que sejam impressas somente se as seguintes condições forem verdadeiras:
 
 se flavor é definido como vanilla ou chocolate e
@@ -158,19 +198,26 @@ I'd like two scoops of __________ ice cream in a __________ with __________.
 Preencha os espaços em branco com o sabor do sorvete, o recipiente e a cobertura. Por exemplo,
 
 I'd like two scoops of vanilla ice cream in a cone with peanuts.
+DICA: certifique-se de testar seu código com diferentes valores. Por exemplo:
+
+Se flavor é igual a "chocolate", vessel igual a "cone" e toppings igual a "sprinkles", então "I'd like two scoops of chocolate ice cream in a cone with sprinkles." deve ser impresso no console.
 */
+
+// change the values of `flavor`, `vessel`, and `toppings` to test your code
 var flavor = "vanilla";
 var vessel = "cone";
 var toppings = "sprinkles";
 
+// Add your code here
 if((flavor === "vanilla" || flavor === "chocolate") && (vessel === "cone" || vessel === "bowl") && (toppings === "sprinkles" || toppings === "peanuts")){
     console.log("I'd like two scoops of " + flavor +  " ice cream in a " + vessel + " with " + toppings + ".");
 }
 
 /*
-Se você é como eu, encontrar o tamanho certo de uma camiseta,às vezes, pode ser um desafio. Qual é meu tamanho? Qual é a diferença entre S (pequeno), M (médio) e L (grande)? Eu normalmente uso L, mas, e se eu precisar de um XL (extra grande)?
+Se você é como eu, encontrar o tamanho certo de uma camiseta, às vezes, pode ser um desafio. Qual é meu tamanho? Qual é a diferença entre S (pequeno), M (médio) e L (grande)? Eu normalmente uso L, mas, e se eu precisar de um XL (extra grande)?
 
 Felizmente, nossos amigos na Teespring têm nos ajudado, pois eles criaram uma tabela de tamanho de forma que torna as coisas muito mais fáceis.
+
 
 Tabela de tamanho de camiseta
 
@@ -199,10 +246,13 @@ Se shirtWidth é igual a 19, shirtLength é igual a 28 e shirtSleeve é igual a 
 Se shirtWidth é igual a 26, shirtLength é igual a 33 e shirtSleeve é igual a 9.63, então 2XL deve ser impresso no console.
 Se shirtWidth é igual a 18, shirtLength é igual a 29 e shirtSleeve é igual a 8.47, então N/A deve ser impresso no console.
 */
+
+// change the values of `shirtWidth`, `shirtLength`, and `shirtSleeve` to test your code
 var shirtWidth = 23;
 var shirtLength = 30;
 var shirtSleeve = 8.71;
 
+// Write your if/else code here
 if((shirtWidth >= 18 && shirtWidth < 20) && (shirtLength === 28) && (shirtSleeve >= 8.13 && shirtSleeve < 8.38)){
     console.log("S");
 }else if((shirtWidth >= 20 && shirtWidth < 22) && (shirtLength === 29) && (shirtSleeve >= 8.38 && shirtSleeve < 8.63)){
@@ -218,6 +268,34 @@ if((shirtWidth >= 18 && shirtWidth < 20) && (shirtLength === 28) && (shirtSleeve
 }else{
     console.log("N/A");
 }
+
+/*
+Da menor das criaturas para o maior dos animais, inevitavelmente toda matéria viva deve ingerir outros organismos para sobreviver. Isso significa que todos os animais vão cair dentro de uma das três categorias de consumidores, com base no tipo de comida que comem:
+
+Animais que comem somente plantas são chamados de herbívoros (herbivore)
+Animais que comem somente outros animais são chamados de carnívoros (carnivore)
+Animais que comem tanto plantas como animais são chamados de onívoros (omnivere)
+Instruções:
+Escreva uma série de declarações ternárias que definam a variável category igual a:
+
+"herbivore" se um animal come planta
+"carnivore" se um animal come animais
+"omnivore" se um animal come plantas e animais
+undefined se um animal não come plantas nem animais
+Use as variáveis eatsPlants (come plantas) e eatsAnimals (come animais) para testar seu código.
+
+DICA: certifique-se de testar seu código com diferentes valores. Por exemplo, 
+
+Se eatsPlants é true e eatsAnimals é false, então herbivore deve ser impresso no console.
+*/
+
+// change the values of `eatsPlants` and `eatsAnimals` to test your code
+var eatsPlants = false;
+var eatsAnimals = true;
+
+var category = /* your code goes here */
+
+console.log(category);
 
 /*
 Em 2015, o Departamento de Estatísticas de Trabalho dos EUA conduziu uma pesquisa para revelar como a média salarial é diretamente relacionada ao número de anos gasto dentro da escola. Em seus resultados, eles descobriram que pessoas:
@@ -246,11 +324,14 @@ DICA: certique-se de testar seu código com diferentes valores. Por exemplo:
 
 Se educação for igual a "an Associate's degree", então In 2015, a person with an Associate's degree earned an average of $41,496/year. deve ser impresso no console.
 */
+
+// change the value of `education` to test your code
 var education = 'no high school diploma';
 
 // set the value of this based on a person's education
 var salary = 0;
 
+// your code goes here
 switch(education){
     case "no high school diploma":
         salary = 25636;

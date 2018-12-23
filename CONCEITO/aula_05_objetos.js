@@ -1,5 +1,5 @@
-//Utilizando Objetos em JavaScript
 /*
+Instruções:
 Usando o exemplo guarda-chuva do vídeo anterior, veja se você consegue seguir o método exemplo open() e crie um método close(). Está tudo bem se você tiver problemas no início! Iremos entrar em maiores detalhes mais tarde nesta lição.
 
 var umbrella = { 
@@ -16,6 +16,7 @@ var umbrella = {
 };
 DICA: Lembre-se de colocar todas as propriedades e métodos de seus objetos dentro de chaves: var myObject = { greeting: "hello", name: "Julia" };. Também, lembre-se que um objeto é apenas um outro tipo de dado. Assim como você colocaria um ponto-e-vírgula após uma declaração de variável string var myString = "hello";, não se esqueça de colocar um ponto-e-vírgula no fim da declaração de seu objeto.
 */
+
 var umbrella = {
     color: "pink",
     isOpen: true,
@@ -40,12 +41,15 @@ var umbrella = {
 };
 
 /*
+Instruções:
 Crie um objeto breakfast para representar o seguinte item do menu:
 
 The Lumberjack - $9.95
 eggs, sausage, toast, hashbrowns, pancakes
 O objeto deve conter propriedades para name, price e ingredients.
 */
+
+// your code goes here
 var breakfast = {
     name: "The Lumberjack",
     price: 9.95,
@@ -53,6 +57,7 @@ var breakfast = {
 };
 
 /*
+Instruções:
 Usando o dado objeto:
 
 var savingsAccount = {
@@ -75,6 +80,7 @@ adicione um método printAccountSummary() que retorne a seguinte mensagem de con
 Welcome!
 Your balance is currently $1000 and your interest rate is 1%.
 */
+
 var savingsAccount = {
     balance: 1000,
     interestRatePercent: 1,
@@ -99,6 +105,7 @@ var savingsAccount = {
 console.log(savingsAccount.printAccountSummary());
 
 /*
+Instruções:
 Crie um objeto chamado facebookProfile. O objeto deve ter três propriedades:
 
 seu nome (name)
@@ -111,6 +118,8 @@ deleteMessage(index) - remove a mensagem correspondente ao índice fornecido
 addFriend() - aumenta a contagem de amigos em 1
 removeFriend() - diminui a contagem de amigos em 1
 */
+
+// your code goes here
 var facebookProfile = {
     name: "Othon Rafael",
     friends: 500,
@@ -146,6 +155,7 @@ Chocolate donuts cost $2.45 each
 Cider donuts cost $1.59 each
 Boston Cream donuts cost $5.99 each
 */
+
 var donuts = [
     { type: "Jelly", cost: 1.22 },
     { type: "Chocolate", cost: 2.45 },
