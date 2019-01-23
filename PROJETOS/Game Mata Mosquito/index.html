@@ -11,7 +11,25 @@
     <script src="game.js"></script>    
 </head>
 <body onload="define_palco()" onresize="define_palco()">
+
+    <div class="painel">
+        <div class="vidas">
+            <img id="vida1" src="img/coracao_cheio.png">
+            <img id="vida2" src="img/coracao_cheio.png">
+            <img id="vida3" src="img/coracao_cheio.png">
+        </div>
+
+        <div class="cronometro">
+            Tempo restante: <span id="cronometro"></span>
+        </div>
+    </div>
     
-    <script>posicao_random()</script>
+    <script>  
+        document.getElementById('cronometro').innerHTML = tempo; 
+    
+        var criaMosquito = setInterval(function(){
+            posicao_random();
+        },intervalo);
+    </script>
 </body>
 </html>
