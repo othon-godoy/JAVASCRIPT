@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 01 - Ajax Request</title>
+</head>
+<body>
+    <script>
+        var xmlHttp = new XMLHttpRequest();
+
+        //enviando informação na requisição com o GET 
+        xmlHttp.open("GET", "cep.php?cep=12345678978", true);
+        xmlHttp.send();
+
+        //enviando informações na requisição com o POST
+        xmlHttp.open("POST", "cep.php", true);
+        xmlHttp.send("cep=12345678978");
+
+        xmlHttp.onreadystatechange = () => {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("element").innerHTML = this.responseText;
+            }
+        }
+    </script>
+</body>
+</html>

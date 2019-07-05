@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 00 - Create XMLHttpRequest</title>
+</head>
+<body>
+    <script>
+        var xmlHttp = new XMLHttpRequest();
+
+        //Métodos do objeto XMLHttpRequest
+        xmlHttp.abort();                                //cancela uma requisição
+
+        xmlHttp.getAllResponseHeaders();                //retorna todas as informações do cabeçalho
+
+        xmlHttp.getResponseHeader();                    //retorna uma informação específica do cabeçalho
+
+        xmlHttp.open(method, url, async, user, psw);    //method: GET ou POST
+                                                        //url:    localização do arquivo
+                                                        //async:  true(asynchronous) ou false(synchronous)
+                                                        //user:   nome de usuário (opcional)
+                                                        //psw:    senha (opcional)
+
+        xmlHttp.send();                                 //envia uma requisição ao servidor (método GET)
+
+        xmlHttp.send(string);                           //envia uma requisição ao servidor (método POST)
+
+        //Propriedades do objeto XMLHttpRequest
+        xmlHttp.onreadystatechange                      //define uma função a ser chamada assim que a propriedade readyState é alterada
+                                                        //xmlHttp.onreadystatechange = () => {} notação para a chamada de função anônima
+
+        xmlHttp.readyState                              //status da requisição
+                                                        //0: requisição não iniciada
+                                                        //1: estabelecida conexão com o servidor
+                                                        //2: requisição recebida pelo servidor
+                                                        //3: servidor processando requisição
+                                                        //4: requisição finalizada e resposta pronta
+
+        xmlHttp.responseText                            //retorna os dados da resposta como um text
+
+        xmlHttp.responseXML                             //retorna os dados da resposta como um XML
+
+        xmlHttp.status                                  //retorna o status da requisição
+                                                        //200: OK
+                                                        //403: acesso negado
+                                                        //404: não encontrado
+    </script>
+</body>
+</html>
