@@ -59,11 +59,11 @@ function Person(first, last, age, gender, interests) {
         }
       }
 
-      alert(string);
+      console.log(string);
     }
 
     this.greeting = function() {
-      alert('Hi! I\'m ' + this.name.first + '.')
+      console.log('Hi! I\'m ' + this.name.first + '.')
     }
 }
 
