@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">            
+            
+            //Prévia de classes em JavaScript ES6
+            class Dessert {
+
+                constructor(calories = 250){
+
+                    this.calories = calories
+                }
+            }
+
+            class IceCream extends Dessert {
+
+                constructor(flavor, calories, toppings = []) {
+                    
+                    super(calories)
+                    this.flavor = flavor
+                    this.toppings = toppings
+                }
+
+                addTopping(topping) {
+
+                    this.toppings.push(topping)
+                }
+            }
+
+            //As classes em ES6 escondem o fato de que, por debaixo dos panos, ocorre herança entre objetos via prototypes, da mesma forma que em ES5. 
+            
+            /*
+            No código abaixo a função Plane é um construtor que criará um novo objeto plane. As informações de um objeto plane específico são passadas para a função Plane e atribuídas ao objeto. Métodos que são herdados por cada objeto plane ficam localizados no objeto plane.prototype.
+            No exemplo abaixo richardPlane é criado com apenas 1 motor, enquanto o jamesPlane é criado com 4 motores. No entanto, ambos utilizam o mesmo método startEngines() para ativar seus respectivos motores
+            */
+
+            //exemplo de classes em ES5
+            
+            console.log("Exemplo de classes em ES5")
+            
+            function Plane(numEngines) {
+
+                this.numEngines = numEngines
+                this.enginesActive = false
+            }
+
+            Plane.prototype.startEngines = function() {
+
+                console.log("starting engines...")
+                this.enginesActive = true
+            }
+
+            const richardPlane = new Plane(1)
+            richardPlane.startEngines()
+
+            const jamesPlane = new Plane(2)
+            jamesPlane.startEngines()
+
+            //exemplo de classe em ES6
+
+            console.log("Exemplo de classes em ES6")
+
+            class PlaneA {
+                
+                constructor(numEngines) {
+
+                    this.numEngines = numEngines
+                    this.enginesActive = false
+                }
+
+                startEngines() {
+
+                    console.log("starting engines...")
+                    this.enginesActive = true
+                }
+            }
+
+            const richardPlaneA = new PlaneA(1)
+            richardPlaneA.startEngines()
+
+            const jamesPlaneA = new PlaneA(2)
+            jamesPlaneA.startEngines()
+
+        </script>
+
+        <title>Aula 09 - Classes</title>
+    </head>
+    <body>
+        <h1>Aula 09 - Classes</h1>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">            
+            
+            //No ES6, é possível extrair dados de arrays e objetos para diferentes variáveis utilizando o destructuring     
+
+            //extração de dados de arrays no ES5
+            const point = [10, 25, -34]      
+
+            const x = point[0]
+            const y = point[1]
+            const z = point[2]
+
+            console.log("Extração de dados de arrays no ES5")            
+            console.log(x, y, z)
+
+            //extração de dados de objetos no ES5
+            const gemstone = {
+                type: 'quartz',
+                color: 'rose',
+                karat: 21.29
+            };
+
+            const type = gemstone.type
+            const color = gemstone.color
+            const karat = gemstone.karat
+
+            console.log("Extração de dados de um objeto no ES5")
+            console.log(type, color, karat)
+
+            //extração de dados de arrays no ES6 com o destructuring
+            const pointES6 = [10, 25, -34]
+            const [a, b, c] = pointES6
+
+            console.log("Extração de dados de arrays no ES6 com o destructuring")
+            console.log(a, b, c)
+
+            //const [x, ,z] = point irá ignorar a coordenada y
+
+            //extração de dados de objetos no ES6 com o destructuring
+            const gemstoneES6 = {
+                typeA: 'quartz',
+                colorB: 'rose',
+                karatC: 21.29
+            }
+
+            const {typeA, colorB, karatC} = gemstoneES6
+
+            console.log("Extração de dados de objetos no ES6 com o destructuring")
+            console.log(typeA, colorB, karatC)
+
+            //let {color} = gemstone especifíca qual valor deve ser selecionado
+            
+        </script>
+
+        <title>Aula 06 - Array Destructuring</title>
+    </head>
+    <body>
+        <h1>Aula 06 - Array Destructuring</h1>
+    </body>
+</html>

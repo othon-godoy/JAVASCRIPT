@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">            
+            
+            //No ES5 é muito comum um objeto ser inicializado usando nomes de propriedades idênticas aos nomes de variáveis que são atribuidas a elas
+
+            //por exemplo
+            let type = 'quartz';
+            let color = 'rose';
+            let carat = 21.29;
+
+            const gemstone = {
+                type: type,     //nomes idênticos
+                color: color,   //nomes idênticos
+                carat: carat,   //nomes idênticos
+                calculateWorth: function() {
+                    
+                }
+            }
+
+            console.log("Atribuição de valores a propriedades utilizando variáveis com nomes idênticos no ES5")
+            console.log(gemstone)
+
+            //no ES6 é possível remover esses nomes de variáveis duplicadas das propriedades do objeto caso as propriedades tenham o mesmo nome das variáveis que são atribuídas a elas. A keyword function também não é mais necessária
+
+            const gemstoneES6 = {
+                type,
+                color,
+                carat, 
+                calculateWorth() {
+
+                }                
+            }
+
+            console.log("Atribuição de valores a propriedades utilizando variáveis com nomes idênticos no ES6")
+            console.log(gemstoneES6)            
+
+        </script>
+
+        <title>Aula 07 - Abreviação Object Literal</title>
+    </head>
+    <body>
+        <h1>Aula 07 - Abreviação Object Literal</h1>
+    </body>
+</html>

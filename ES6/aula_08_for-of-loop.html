@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">            
+            
+            //No ES5 existem diversos loops de repetição, porém todos eles possuem algumas desvantagens
+
+            //FOR LOOP
+            /*
+            no for loop básico é preciso de um controle do contador e da condição de saída do loop. Se quiser acessar um valor de um array, por exemplo, o contador servirá apenas como um controle de qual índice do array deverá ser acessado. Muito trabalhoso...
+            */ 
+            console.log("FOR LOOP")
+        
+            const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+            for (let i = 0; i < digits.length; i++) {
+
+                console.log(digits[i])
+            } 
+
+            //FOR IN LOOP
+            /*
+            no for in loop não é preciso manter a contagem lógica do contador e a condição de saída, porém ainda é preciso acessar valores de um array, por exemplo, a partir de um index. Ainda trabalhoso...
+            */ 
+
+            console.log("FOR IN LOOP")
+
+            const digitsA = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+            for (const index in digitsA) {
+
+                console.log(digitsA[index])
+            }
+
+            //FOREACH LOOP
+            /*
+            no foreach loop só é possível iterar através de arrays e não existe a opção de parar ou interromper uma iteração. Se isso for necessário, deverá ser utilizado o FOR LOOP básico
+            */
+
+            console.log("FOR OF LOOP")
+
+            //FOR OF LOOP
+            //implementado no ES6, pode ser utilizado para iterar qualquer tipo de dado iterável e não é preciso de um controle de contador ou saída e é possível acessar diretamente os elementos sem precisar de um index
+
+            const digitsB = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            for (const digit of digitsB) {
+
+                console.log(digit);
+            }
+
+        </script>
+
+        <title>Aula 08 - For Of Loops</title>
+    </head>
+    <body>
+        <h1>Aula 08 - For Of Loops</h1>
+    </body>
+</html>

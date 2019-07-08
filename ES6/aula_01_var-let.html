@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">            
+            
+            //ao criar variáveis com o var dentro de um escopo de bloco ela sofre uma elevação de nível e também se torna disponível para o escopo imadiatamente superior
+            function x() {
+
+                if(true) {
+
+                    //variável serie criada no escopo de bloco
+                    var serie = "Friends"
+                    console.log("Escopo de Bloco")
+                    console.log(serie)
+                }
+
+                //variável serie também pode ser usada no escopo de função, subiu um nível
+                console.log("Escopo da Função")
+                console.log(serie)
+            }
+
+            x()
+
+            //já ao criar variáveis com o let, ele preserva o escopo da função não permitindo elevações de nível
+            function y() {
+
+                if(true) {
+
+                    //variável serie criada no escopo de bloco
+                    let serie = "Game Of Thrones"
+                    console.log("Escopo de Bloco")
+                    console.log(serie)
+                }
+
+                //variável serie não pode ser usada no escopo de função, não subiu um nível
+                console.log("Escopo da Função")
+                console.log(serie)
+            }
+
+            y()
+
+            //resumindo, passar a utilizar o let ao declarar variáveis
+
+        </script>
+
+        <title>Aula 01 - Declaração de Variáveis com Var e Let</title>
+    </head>
+    <body>
+        <h1>Aula 01 - Declaração de Variáveis com Var e Let</h1>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">            
+            
+            //notação comum
+            /*
+            let quadrado = function(x = 1) {
+
+                return x * x
+            }
+            */
+
+            //notação arrow function com mais de um parâmetro
+            let multiplicacao = (x, y) => {
+                 
+                return x * y
+            }
+
+            let divisao = (x, y) => x / y //return implícito
+
+            //notação arrow function com apenas um parâmetro
+            let quadrado = x => x * x //return implícito
+
+            console.log(multiplicacao(5,3))   
+            console.log(divisao(15,3))   
+            console.log(quadrado(3,3))        
+
+            //usando if ternário para conseguir utilizar o return implícito
+            let parOuImpar = numero => (numero % 2 === 0) ? "par" : "impar"
+
+            console.log(parOuImpar(7))            
+            
+        </script>
+
+        <title>Aula 05 - Arrow Function</title>
+    </head>
+    <body>
+        <h1>Aula 05 - Arrow Function</h1>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">            
+            
+            //constantes são criadas com caracteres maiúsculos e seus valores devem ser atribuídos no momento da criação
+            //constantes seguem o mesmo critério do let para o controle de escopo
+
+            //constante criada no escopo global
+            const SERIE = "Friends"
+
+            function x() {
+
+                //constante criada no escopo da função
+                const SERIE = "Game Of Thrones"
+                console.log("Escopo da Função")
+                console.log(SERIE)
+            }
+
+            x()
+            console.log("Escopo Global")
+            console.log(SERIE)
+        </script>
+
+        <title>Aula 02 - Declaração de Constantes com o Const</title>
+    </head>
+    <body>
+        <h1>Aula 02 - Declaração de Constantes com o Const</h1>
+    </body>
+</html>

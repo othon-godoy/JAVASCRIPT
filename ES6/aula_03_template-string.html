@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">            
+            
+            let nome = "Othon"
+
+            //o template string deve vir entre crases `` e aceita quebras de linha como forma de montar o template
+            console.log(`
+                Olá ${nome}, 
+                tudo bem?
+            `);
+
+            console.log(`7 * 7 = ${7 * 7}`)
+
+            function calcular(x, y) {
+
+                return x * y
+            }            
+
+            console.log(`A multiplicação de  7 * 7 é: ${calcular(7,7)}`)
+            
+            
+        </script>
+
+        <title>Aula 03 - Template String</title>
+    </head>
+    <body>
+        <h1>Aula 03 - Template String</h1>
+    </body>
+</html>
