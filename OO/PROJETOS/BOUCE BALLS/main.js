@@ -24,13 +24,9 @@ function random(min,max) {
 //Como o programa contará com muitas bolas saltando ao redor da tela e todas essas bolas se comportarão da mesma maneira, faz sentido representá-las com um objeto.
 
 //Aqui incluímos alguns parâmetros que definem as propriedades que cada bola precisa para funcionar em nosso programa:
-
 //  x e y coordenadas - as coordenadas horizontais e verticais onde a bola vai começar na tela. Isso pode variar entre 0 (canto superior esquerdo) à largura e altura da janela de visualização do navegador (canto inferior direito).
-
 //  velocidade horizontal e vertical (velX e velY) - cada bola recebe uma velocidade horizontal e vertical; em termos reais, esses valores serão adicionados regularmente as coordenadas x e y  quando começarmos a animar as bolas, para movê-las.
-
 //  color - cada bola recebe uma cor.
-
 //  size - cada bola recebe um tamanho - este será o seu raio, em pixels.
 
 function Ball(x, y, velX, velY, color, size) {

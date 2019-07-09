@@ -7,6 +7,7 @@ Protótipos são o mecanismo pelo qual objetos JavaScript herdam recursos uns do
 */
 
 //Para a explicação de protótipos será utilizada a função de construtor Person()
+
 function Person(first, last, age, gender, interests) {
 
     this.name = {
@@ -68,12 +69,15 @@ function Person(first, last, age, gender, interests) {
 }
 
 //Chamando um construtor e criando uma nova instância de objeto
+
 var person1 = new Person('Othon', 'Godoy', 21, 'male', ['music', 'programming'])
 
 //Para conferir as propriedades de protótipos existentes para a classe, basta inserir o seguinte no console JavaScript. A saída não mostrará muito porque não foi definido nada no protótipo do construtor personalizado
+
 Person.prototype
 
 //A seguir um exemplo de modificação da propriedade prototype de uma função de construtor, os métodos adicionados ao protótipo estão disponíveis em todas as instâncias de objetos criadas a partir do construtor.
+
 Person.prototype.bye = function() {
 
     console.log(this.name.first + ' has left the building. Bye for now!');
@@ -82,9 +86,11 @@ Person.prototype.bye = function() {
 //Ao chamar o método bye é exibida uma mensagem com o nome da pessoa, conforme definido dentro do construtor. Isso é realmente útil, mas o que é ainda mais útil é que toda a cadeia de herança foi atualizada dinamicamente, disponibilizando automaticamente esse novo método em todas as instâncias de objeto derivadas do construtor Person().
 
 //Chamando um construtor e criando uma nova instância de objeto
+
 var person2 = new Person('Amanda', 'Fernandes', 22, 'female', ['music', 'movies'])
 
 //Adicionando um novo atributo ao construtor Person()
+
 Person.prototype.fullName = this.name.first + ' ' + this.name.last
 
 //Ao chamar esse novo atributo o resultado é undefined. Isso funcionou bem no método definido anteriormente no protótipo, porque ele está dentro de um escopo de função, que será transferido com êxito para o escopo da instância do objeto. Já com uma propriedade não funciona, pois this será referência ao escopo global neste caso, não ao escopo da função. 
@@ -92,6 +98,7 @@ Person.prototype.fullName = this.name.first + ' ' + this.name.last
 //Por isso um padrão bastante comum para mais definições de objetos é definir as propriedades dentro do construtor e os métodos no protótipo. Isso torna o código mais fácil de ler, pois o construtor contém apenas as definições de propriedade e os métodos são divididos em blocos separados. 
 
 //Exemplo de definição de objetos
+
 function Person(first, last, age, gender, interests) {
 
     this.name = {
@@ -159,9 +166,11 @@ Person.prototype.bye = function() {
 }
 
 //Chamando um construtor e criando uma nova instância de objeto
+
 var person1 = new Person('Othon', 'Godoy', 21, 'male', ['music', 'programming'])
 
 //Chamando um construtor e criando uma nova instância de objeto
+
 var person2 = new Person('Amanda', 'Fernandes', 22, 'female', ['music', 'movies'])
 
 //Foi possível confirmar que os métodos funcionaram corretamente mesmo sendo inseridos por meio dos protótipos

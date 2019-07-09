@@ -7,6 +7,7 @@ Com a utilização de protótipos em JavaScript é possível criar classes de ob
 */
 
 //Para a explicação de herança será utilizada a função de construtor Person()
+
 function Person(first, last, age, gender, interests) {
 
     this.name = {
@@ -74,6 +75,7 @@ Person.prototype.bye = function() {
 }
 
 //Caso fosse necessário a criação de uma classe Teacher() que herde características de Person()
+
 function Teacher(first, last, age, gender, interests, subject) {
 
     Person.call(this, first, last, age, gender, interests);
@@ -109,9 +111,11 @@ Object.defineProperty(Teacher.prototype, 'constructor', {
 //Agora, ao salvar e atualizar, a entrada Teacher.prototype.constructor deve retornar Teacher(), como desejado, e agora Teacher() está herdando Person()
 
 //Chamando um construtor e criando uma nova instância de objeto
+
 var teacher1 = new Teacher("Othon", "Godoy", 21, "male", ["music", "programming"], "programming")
 
 //O trecho de código abaixo cria um novo método greeting()
+
 Teacher.prototype.greeting = function() {
   var prefix
 
@@ -130,6 +134,7 @@ Teacher.prototype.greeting = function() {
 }
 
 //Chamando um construtor e criando uma nova instância de objeto
+
 var teacher2 = new Teacher("Amanda", "Fernandes", 21, "female", ["music", "movies"], "history")
 
 

@@ -43,11 +43,11 @@ class Person {
 
         this.name = name;
         this.greeting = function () {
-            console.log("Hi!, I'm " + this.name);
-        };
+            console.log("Hi!, I'm " + this.name)
+        }
     }
 }
 
 //Chamando um construtor e criando uma nova instância de objeto
-var person1 = new Person('Othon');
-var person2 = new Person('Godoy');
+var person1 = new Person('Othon')
+var person2 = new Person('Godoy')
