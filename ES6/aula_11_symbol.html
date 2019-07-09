@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">            
+            
+            //Um symbol é uma estrutura de dados única e imutável muito utilizada para identificar as propriedades de um objeto
+            //Para criar um symbol, você escreve Symbol(), passando como parâmetro uma string opcional como sua descrição
+
+            const sym1 = Symbol('apple')
+
+            console.log(sym1)
+
+            //Isso criará um symbol único e o armazenará na variável sym1. A descrição "apple" é apenas uma maneira de descrever o symbol, mas que não pode ser utilizada para acessar o próprio symbol
+
+            //Para compreender melhor a utilização de symbols, segue abaixo um trecho de código de um objeto bowl (tigela, pote, etc...)
+            
+            const bowlA = {
+                'apple': {color: 'red', weight: 136.078},
+                'banana': {color: 'yellow', weight: 183.150},
+                'orange': {color: 'orange', weight: 170.097}
+            }
+
+            console.log("Objeto Bowl A - Apenas 1 banana")
+            console.log(bowlA)
+
+            //O bowl contém frutas que são objetos e que, por sua vez, são propriedades do bowl. Porém, com isso, teremos um problema quando uma segunda banana for adicionada
+
+            const bowlB = {
+                'apple':  { color: 'red', weight: 136.078 },
+                'banana': { color: 'yellow', weight: 183.151 },
+                'orange': { color: 'orange', weight: 170.097 },
+                'banana': { color: 'yellow', weight: 176.845 }
+            }
+
+            console.log("Objeto Bowl B - 2 bananas, porém uma é sobrescrita pela outra")
+            console.log(bowlB)
+
+            //Em vez de adicionar outra banana ao bowl, nossa primeira banana é sobrescrita pela nova. Para resolver esse problema, podemos utilizar os symbols
+
+            const bowlC = {
+                [Symbol('apple')]:  {color: 'red', weight: 136.078},
+                [Symbol('banana')]: {color: 'yellow', weight: 183.150},
+                [Symbol('orange')]: {color: 'orange', weight: 170.097},
+                [Symbol('banana')]: {color: 'yellow', weight: 176.845}
+            }
+
+            console.log("Objeto Bowl C - 2 bananas, com a utilização dos symbols cada banana é um objeto diferente e não ocorre a sobrescrita")
+            console.log(bowlC)
+
+            //Alterando as propriedades do bowl para utilizar symbols, cada propriedade é um Symbol único e a primeira banana não será sobrescrita pela segunda
+
+        </script>
+
+        <title>Aula 11 - Symbol</title>
+    </head>
+    <body>
+        <h1>Aula 11 - Symbol</h1>
+    </body>
+</html>

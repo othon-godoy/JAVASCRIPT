@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">              
+            
+            //Na matemática, um set (conjunto, na tradução literal) é uma coleção de items diferentes entre si. Por exemplo, {2, 4, 5, 6} é um set porque cada número é único e aparece uma só vez. No entanto, {1, 1, 2, 4} não é um set, pois contém itens duplicados (o 1 está lá mais de uma vez)
+
+            //No ES6, existe um novo objeto padrão que se comporta como um set matemático e funciona de maneira similar ao funcionamento de uma array. Esse novo objeto é chamado de set, por convenção. As maiores diferenças entre set e array são:
+            //  Sets não possuem índices - você não faz referência a items do set com base em suas posições no set 
+            //  Items em um set não podem ser acessados individualmente
+
+            //Basicamente, um set é um objeto que permite armazenar items únicos. Você pode adicionar items a um set, remover items de um set e iterar por um set. Esses items podem ser tanto valores primitivos como objetos complexos
+
+            //Como criar um set sem nenhum item
+
+            const gamesA = new Set()
+
+            console.log("Set sem nenhum item")
+
+            console.log(gamesA)
+
+            //Como criar um set a partir de uma lista de valores
+
+            const gamesB = new Set(['Super Mario Bros.', 'Banjo-Kazooie', 'Mario Kart', 'Super Mario Bros.'])
+
+            console.log("Set criado a partir de uma lista de valores passadas por uma array como parâmetro")
+
+            console.log(gamesB)
+
+            //No exemplo acima, o item duplicado "Super Mario Bros." é desconsiderado quando o set é criado
+
+            //Modificando sets
+
+            //Depois de ter criado um set, é possível adicionar ou deletar items dele
+
+            gamesB.add('Banjo-Tooie')
+
+            gamesB.add('Age of Empires')
+
+            gamesB.delete('Super Mario Bros.')
+
+            console.log("Set com novos itens adicionados e o jogo Super Mario Bros. removido")
+
+            console.log(gamesB)
+
+            //Para remover todos os itens de um set basta usar o método .clear()
+
+            gamesB.clear()
+
+            console.log("Set com todos os itens removidos")
+
+            console.log(gamesB)
+
+            //Trabalhando com sets
+
+            //Checando o comprimento
+
+            //Uma vez que seu set foi construído, existem diferentes propriedades e métodos que podem ser utilizados para trabalhar com ele:
+
+            //  .size retorna o número de items em um set
+
+            const months = new Set(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])
+
+            console.log("Número de elementos de um set")
+
+            console.log(months.size)
+
+            //  .has() checa se um item existe
+
+            console.log("Checando se um item existe")
+
+            console.log(months.has('September'))
+
+            //  .values() recupera todos os valores
+
+            console.log("Recuperando todos os valores")
+
+            console.log(months.values())
+
+            //Iterando por itens de um set usando o for of loop
+
+            console.log("Iterando por itens de um set usando o for of loop")
+
+            for(const month of months) {
+
+                console.log(month)
+            }
+
+
+        </script>
+
+        <title>Aula 12 - Sets</title>
+    </head>
+    <body>
+        <h1>Aula 12 - Sets</h1>
+    </body>
+</html>

@@ -10,9 +10,10 @@
 
         <script type="text/babel">            
             
-            //No ES6, é possível extrair dados de arrays e objetos para diferentes variáveis utilizando o destructuring     
+            //No ES6, é possível extrair dados de arrays e objetos para diferentes variáveis utilizando o destructuring 
 
             //extração de dados de arrays no ES5
+
             const point = [10, 25, -34]      
 
             const x = point[0]
@@ -23,6 +24,7 @@
             console.log(x, y, z)
 
             //extração de dados de objetos no ES5
+
             const gemstone = {
                 type: 'quartz',
                 color: 'rose',
@@ -37,6 +39,7 @@
             console.log(type, color, karat)
 
             //extração de dados de arrays no ES6 com o destructuring
+
             const pointES6 = [10, 25, -34]
             const [a, b, c] = pointES6
 
@@ -46,6 +49,7 @@
             //const [x, ,z] = point irá ignorar a coordenada y
 
             //extração de dados de objetos no ES6 com o destructuring
+            
             const gemstoneES6 = {
                 typeA: 'quartz',
                 colorB: 'rose',
