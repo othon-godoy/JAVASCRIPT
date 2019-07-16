@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">            
+            
+            //Se sets e arrays possuem similaridades, então maps e objetos também são similares, pois maps armazenam pares de chave-valor de forma similar à maneira que objetos contêm propriedades com nomes e valores.
+
+            //Basicamente, um map é um objeto que permite armazenar pares de chave-valor onde tanto as chaves como os valores podem ser objetos, valores primitivos ou uma combinação dos dois.
+
+            //Como criar um map
+
+            console.log("Map sem nenhum par chave-valor criado")
+
+            const employees = new Map()
+
+            console.log(employees)
+
+            //Modificando Maps
+
+            //Diferentemente dos sets, você não pode criar maps a partir de uma lista de valores; em vez disso, você adiciona pares de chave-valor utilizando o método .set()
+
+            console.log("Adicionando pares chave-valor a um Map")
+
+            employees.set("othon.godoy@exemplo.com", {
+                firstName: "Othon",
+                lastName: "Godoy",
+                role: "Content Developer"
+            })
+
+            console.log(employees)
+
+            //O método .set() recebe dois parâmetros. O primeiro parâmetro é a chave, que é utilizada para referenciar o segundo argumento, o valor
+
+            //Para remover pares chave-valor, basta utilizar o método .delete()
+            
+            console.log("Removendo pares chave-valor")
+
+            employees.delete("othon.godoy@exemplo.com")
+
+            console.log(employees)
+
+            //Para remover todos os pares de chave-valor contidos no Map, basta utilizar o método .clear()
+
+            employees.clear()
+
+            //Depois de criar um Map você pode utilizar o método .has() para checar se um par chave-valor existe, passando a chave como parâmetro
+
+            const members = new Map()
+
+            members.set("Othon", 10)
+            members.set("Godoy", 20)
+            members.set("Amanda", 30)
+            members.set("Fernandes", 40)
+
+            console.log("Verificando a existência de um par chave-valor")
+
+            console.log(members.has("Othon"))
+
+            //Também é possível recuperar valores contidos em um map, utilizando o método .get() e passando a chave como parâmetro
+
+            console.log(members.get('Othon'))
+
+            //Iterando por Maps
+
+            //MapIterator
+
+            //Usar tanto o método .keys() como o método .values() em um map retornará um novo objeto iterator, chamado de MapIterator. Você pode armazenar esse iterator em uma nova variável e utilizar o método .next() para acessar todos os pares chave-valor do map em um loop. O método utilizado determinará se seu iterator possui acesso às chaves ou valores do map
+
+            let iteratorObjForKeys = members.keys()
+
+            console.log("Usando o .next() para recuperar a próxima chave")
+
+            console.log(iteratorObjForKeys.next())
+
+            //Por outro lado, use o .values() para acessar os valores dos pares chave-valor, repetindo o mesmo processo
+
+            let iteratorObjForValues = members.values()
+
+            console.log("Usando o .next() para recuperar o próximo valor de uma chave")
+
+            console.log(iteratorObjForValues.next())
+
+            //Loop for...of
+
+            for(const member of members){
+                console.log(member)
+            }
+
+            //No entanto, quando você utiliza um loop for...of com um map, não recupera exatamente um par chave-valor. Na verdade, o par chave-valor é separado para uma array onde o primeiro elemento é a chave e o segundo elemento é o valor. Para corrigir isso basta utilizar o array destructuring
+
+        </script>
+
+        <title>Aula 14 - Maps</title>
+    </head>
+    <body>
+        <h1>Aula 14 - Maps</h1>
+    </body>
+</html>

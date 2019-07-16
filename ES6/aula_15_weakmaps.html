@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">
+
+            //Um WeakMap como um map normal, com algumas pequenas diferenças:
+            //  um WeakMap só pode conter objetos como chaves,
+            //  um WeakMap não é um iterable, o que significa que não é possível executar um loop para varrer seu conteúdo e
+            //  um WeakMap não possui um método .clear()
+
+            //Você pode criar um WeakMap assim como você poderia criar um map normal, exceto pelo uso da palavra WeakMap no construtor
+
+            const book1 = {title: "Pride and Prejudice", author: "Jane Austen"}
+
+            const book2 = {title: "The Catcher in the Rye", author: "J.D. Salinger"}
+
+            const book3 = {title: "Gulliver’s Travels", author: "Jonathan Swift"}
+
+            const library = new WeakMap()
+
+            library.set(book1, true)
+
+            library.set(book2, false)
+
+            library.set(book3, true)
+
+            console.log("Criando um WeakMap utilizando como chaves um objeto")
+
+            console.log(library)
+
+            //Garbage Collection
+
+            //No JavaScript, a memória é alocada quando novos valores são criados e é automaticamente liberada quando esses valores não são necessários. Esse processo de liberação de memória após o desuso é conhecido como garbage collection
+
+            //Os WeakMaps se aproveitam do garbage collection ao trabalhar exclusivamente com objetos no lugar das chaves. Se você alterar o valor de um objeto para null, então estará, basicamente, excluindo o objeto. Quando o garbage collector do JavaScript rodar, a memória ocupada por esse objeto anteriormente será liberada para ser usada posteriormente em seu programa
+
+            book1 = null
+
+            console.log("Verificando WeakMap library depois de atribuir o valor null ao objeto book1")
+
+            console.log(library)
+
+        </script>
+
+        <title>Aula 14 - Maps</title>
+    </head>
+    <body>
+        <h1>Aula 14 - Maps</h1>
+    </body>
+</html>
