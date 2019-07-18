@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">
+
+            //Para criar um objeto proxy, usamos o construtor proxy - new Proxy();. O construtor de proxy recebe dois parâmetros:
+            //  o objeto do qual ele será o proxy
+            //  um objeto contendo uma lista de métodos que serão utilizados para tratar o acesso aos dados do primeiro objeto.
+            
+            //O segundo objeto é chamado de handler
+
+            //A maneira mais simples de se criar um proxy é passar como primeiro parâmetro um objeto e como segundo parâmetro um objeto handler vazio
+
+            var richard = {status: "looking for work"}
+
+            var agent = new Proxy(richard, {})
+
+            console.log("Exibindo a variável agent")
+
+            console.log(agent.status)
+
+            //O código acima não faz nada de especial com o proxy - ele apenas passa a requisição diretamente para o primeiro objeto. Se quisermos que o proxy intercepte a requisição, temos que utilizar o objeto handler
+
+            //A chave para tornar proxies úteis é o objeto handler passado como segundo parâmetro no construtor do proxy
+
+            //O objeto handler é constituído de métodos que serão utilizados para o acesso a propriedades. Vamos analisar o método get
+
+            const handler = {
+
+                get(target, propName) {
+
+                    console.log(target); // the `richard` object, not `handler` and not `agent`
+
+                    console.log(propName); // the name of the property the proxy (`agent` in this case) is checking
+                }
+            }
+
+            agent = new Proxy(richard, handler)
+
+            console.log(agent.status)
+
+            //No código acima, o objeto handler possui um método get (chamado de "armadilha" uma vez que está sendo utilizado em um proxy). Quando o código agent.status; é executado na última linha, o método get do proxy intercepta a chamada à propriedade status, executando o código da própria função armadilha get. Isso logará o objeto-alvo do proxy (o objeto richard) e, então, logará o nome da propriedade sendo requisitada (a propriedade status). E isso é tudo! O código não loga a propriedade diretamente! É importante notar que - se uma armadilha é utilizada, você precisará garantir que está fornecendo toda a funcionalidade necessária para aquela armadilha específica
+
+            //Se quiséssemos acessar de fato a propriedade, nós teriamos que retornar o valor dela por meio do objeto-alvo (target)
+
+            const handlerA = {
+
+                get(target, propName) {
+
+                    console.log(target); // the `richard` object, not `handler` and not `agent`
+
+                    console.log(propName); // the name of the property the proxy (`agent` in this case) is checking
+
+                    return target[propName]
+                }
+            }
+
+            agent = new Proxy(richard, handlerA)
+
+            console.log(agent.status)
+
+            const handlerB = {
+
+                get(target, propName) {
+
+                    return "He's following many leads, so you should offer a contract as soon as possible!"
+                }
+            }
+
+            agent = new Proxy(richard, handlerB)
+
+            console.log(agent.status)
+
+            //Com esse código, o proxy nem checará o objeto-alvo, ele apenas interceptará a chamada da propriedade, respondendo diretamente à mensagem de retorno
+
+            //Dessa forma, a armadilha get assume o controle sempre que uma propriedade é acessada no proxy. Se quisermos interceptar chamadas para modificar propriedades, então a armadilha set deverá ser utilizada
+
+            //A armadilha set é utilizada para interceptar o código que modificará uma propriedade. Ela recebe:
+            //  o objeto-alvo do proxy
+            //  a propriedade que está sendo alterada
+            //  o novo valor para o proxy
+
+            const handlerC = {
+
+                set(target, propName, value) {
+
+                    if (propName === 'payRate') { // if the pay is being set, take 15% as commission
+
+                        value = value * 0.85
+                    }
+
+                    target[propName] = value
+                }
+            }
+
+            agent = new Proxy(richard, handlerC)
+
+            agent.payRate = 1000 // set the actor's pay to $1,000
+
+            agent.payRate 
+
+            //No código acima, observe que a armadilha set checa se a propriedade payRate está sendo alterada. Se estiver, então o proxy (variável agent) reduz o valor em quinze por cento, caso a variável payRate tenha recebido algum valor pelo proxy. No fim do trecho de código, a propriedade payRate possui o valor 850            
+
+        </script>
+
+        <title>Aula 17 - Proxies</title>
+    </head>
+    <body>
+        <h1>Aula 17 - Proxies</h1>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--JavaScript ES6-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">
+
+            //Uma promise em JavaScript é criada com a nova função construtora de Promise - new Promise(). Uma promise permitirá que você inicie algum trabalho que será realizado de forma assíncrona e libera você para executar outros trabalhos. Quando você cria uma promise, precisa entregar o código que será executado de forma assíncrona. Você entrega este código como parâmetro da função construtora:
+
+            new Promise(function(){
+
+                window.setTimeout(function createsundae(flavor = 'chocolate'){
+
+                    const sundae =  {}
+
+                    // request ice cream
+                    // get cone
+                    // warm up ice cream scoop
+                    // scoop generous portion into cone!
+
+                }, Math.random() * 2000)
+            })
+
+            //Mas uma vez que tudo está concluído, como o mecanismo JavaScript nos informa que tudo está pronto e que estamos preparados para seguir adiante? Pela passagem de duas funções como parâmetro para nossa função inicial de parâmetro da promise, tipicamente conhecidas como resolve e reject
+
+            //A função é passada para a função que fornecemos no construtor da promise - normalmente, usamos a palvra "resolve" para indicar que essa função deverá ser chamada quando a requisição for concluída com sucesso
+
+            new Promise(function (resolve, reject) {
+
+                window.setTimeout(function createSundae(flavor = 'chocolate') {
+
+                    const sundae = {}
+
+                    // request ice cream
+                    // get cone
+                    // warm up ice cream scoop
+                    // scoop generous portion into cone!
+
+                    resolve(sundae)
+
+                }, Math.random() * 2000)
+            })
+
+            //Agora que o sundae foi criado com sucesso, o método resolve é chamado e recebe como parâmetro o objeto que desejamos retornar - nesse caso, o objeto que está retornando é o sundae concluído, então, o método resolve está sendo utilizado para indicar que a requisição foi concluída com sucesso
+
+            //Se houver algum problema com a requisição e ela não puder ser concluída, podemos usar a segunda função passada como parâmetro no construtor para a função parâmetro do construtor da promise. Usualmente, essa função é armazenada em um identificador chamado "reject" para indicar que deverá ser usada em casos de falha da requisição por algum motivo
+
+            function iceCreamConeIsEmpty(flavor){
+                return true
+            }
+
+            new Promise(function (resolve, reject) {
+
+                window.setTimeout(function createSundae(flavor = 'chocolate') {
+
+                    const sundae = {}
+
+                    // request ice cream
+                    // get cone
+                    // warm up ice cream scoop
+                    // scoop generous portion into cone!
+
+                    if(iceCreamConeIsEmpty(flavor)) {
+
+                        reject("Sorry, we're out of that flavor")
+                    }
+
+                }, Math.random() * 2000)
+            })
+
+            //Então, o método reject é utilizado quando a requisição não pode ser concluída. Observe que, mesmo que a requisição tenha falhado, ainda conseguimos retornar dados - neste caso, estamos retornando apenas o texto que informa que um erro ocorreu na requisição
+
+            //Um construtor de promise recebe uma função que será executada e, depois de algum tempo, será concluída com sucesso (usando o método resolve) ou sem sucesso (usando o método reject). Quando a requisição for concluída (com sucesso ou não), a promise estará concluída e nos informará, para que possamos decidir o que fazer com a resposta
+
+            //O primeiro ponto que precisa ser entendido é que uma promise retornará um objeto imediatamente
+
+            const myPromiseObj = new Promise(function (resolve, reject) {
+
+                //sundae creation code
+                
+            });
+
+            //Esse objeto possui um método .then(), que pode ser utilizado para nos informar se a requisição realizada na promise foi concluída com sucesso ou falhou. O método .then() recebe duas funções:
+            //  1. uma função para executar caso a requisição tenha sido concluída com sucesso
+            //  2. uma função para executar caso a requisição tenha falhado
+
+            mySundae.then(function(sundae){
+                
+                console.log("Time to eat my delicious sundae")
+
+            }, function(msg){
+
+                console.log(msg)
+
+                self.goCry()
+
+            })
+
+            //Como você pode ver, a primeira função passada para o método .then() será chamada e, caso a requisição seja bem-sucedida, receberá o objeto recebido como parâmetro pelo resolve da Promise. Neste caso, a função receberia o objeto sundae. A segunda função será chamada caso a requisição falhe e receberá o objeto passado como parâmetro para o reject da promise. Nesse último caso, a função recebe a mensagem de erro "Sorry, we're out of that flavor :-("
+
+        </script>
+
+        <title>Aula 16 - Promises</title>
+    </head>
+    <body>
+        <h1>Aula 16 - Promises</h1>
+    </body>
+</html>
